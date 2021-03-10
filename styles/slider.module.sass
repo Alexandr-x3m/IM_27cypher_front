@@ -1,0 +1,278 @@
+@import app
+
+.slider_container
+    +transitionDuration(0.3s)
+    display: grid
+    grid-auto-flow: column
+    position: relative
+    left: 0
+    width: 100%
+    height: 100%
+
+.sliderMain__itemBlock
+    display: grid
+    grid-template-columns: 1fr
+    grid-column-gap: 64px
+    position: relative
+    width: inherit
+    max-height: inherit
+    padding: 60px 100px
+    color: $def-color
+    overflow: hidden
+
+.sliderMain__textBlock
+    position: absolute
+    top: 50%
+    width: 100%
+    padding: 0 100px
+    transform: translate( 0, -50%)
+    z-index: 99
+
+.servicePreview__btn
+    background: $def-color
+    border-radius: 32px
+    input
+        color: $prim-back-color
+        text-align: center
+        font-weight: 700
+        padding: 16px 28px
+        width: 100%
+        border-radius: 32px
+        &:hover
+            color: $def-color
+            background: $prim-back-80-color
+    @media screen and (max-width: 800px)
+        height: 48px
+        border-radius: 6px
+        input
+            padding: 12px 28px
+            border-radius: 6px
+
+.sliderMain__textBlock
+    @media screen and ( max-width: 1200px )
+        width: 100%
+        padding: 0 64px
+    @media screen and (max-width: 800px)
+        padding: 0 32px
+
+.textBlock_title
+    text-align: center
+    font-size: $txt-48px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 48px
+    @media screen and ( max-width: 1200px )
+        width: 100%
+        font-size: $txt-36px
+    @media screen and (max-width: 800px)
+        font-size: $txt-32px
+        margin-bottom: 24px
+
+.textBlock_desc
+    position: relative
+    width: 750px
+    margin: 0 auto 64px auto
+    font-weight: 400
+    text-align: center
+    font-size: $txt-32px
+    color: $def-80-color
+    @media screen and ( max-width: 1200px )
+        width: 100%
+        margin: 0 auto 48px auto
+        padding: 0 48px
+        font-size: $txt-24px
+    @media screen and (max-width: 800px)
+        font-size: $txt-18px
+        margin: 0 auto 48px auto
+        padding: 0
+
+.textBlock_btn
+    position: relative
+    width: 200px
+    margin: auto
+    @media screen and (max-width: 600px)
+        width: 100%
+        height: 48px
+
+.sliderMain__imgBlock
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+    z-index: 98
+    opacity: 0.6
+
+.slider__mainImg
+    position: relative
+    width: 100%
+    @media screen and ( max-width: 1400px )
+        left: 50%
+        width: auto
+        height: 100%
+        transform: translate(-50%, 0) 
+
+.sliderMain__infoBlock
+    position: absolute
+    top: 100vh
+    left: 0
+    width: 100%
+    height: inherit
+    z-index: 99
+
+.sliderMain_swiperNav
+    display: flex
+    flex-direction: row
+    position: absolute
+    top: -152px
+    left: 50%
+    bottom: 32px
+    transform: translate(-50%, 0)
+
+.swiperNav__item
+    +transitionDuration(0.2s)
+    width: 90px
+    height: 3px
+    margin-right: 24px
+    background: $def-color
+    button
+        position: relative
+        top: -14px
+        width: 100%
+        height: 32px
+        border: none
+        background: none
+        outline: none
+        cursor: pointer
+    &:hover
+        background: $prim-color
+        cursor: pointer
+    @media screen and ( max-width: 800px )
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        margin-right: 12px
+
+.swiperNav__activeItem
+    width: 90px
+    height: 3px
+    margin-right: 24px
+    background: $prim-color
+    button
+        position: relative
+        top: -14px
+        width: 100%
+        height: 32px
+        border: none
+        background: none
+        outline: none
+        cursor: pointer
+    @media screen and ( max-width: 800px )
+        width: 12px
+        height: 12px
+        border-radius: 50%
+        margin-right: 12px
+
+.sliderMain_swiperBtns
+    display: grid
+    grid-template-columns: 80px 1fr 80px
+    position: absolute
+    top: calc(-50vh - 120px)
+    width: 100%
+    @media screen and ( max-width: 1200px )
+        display: none
+
+.swiperBtns__button
+    position: relative
+    top: 0
+    left: 0
+    width: 46px
+    height: 46px
+    padding: 12px
+    border: 1px solid $def-60-color
+    background: $prim-back-color
+    border-radius: 6px
+    outline: none
+    &:first-child
+        margin-left: 32px
+        &:hover
+            top: -2px
+            left: -2px
+            box-shadow: 3px 4px 4px $prim-color
+    &:last-child
+        grid-column: 3
+        margin-right: 32px
+        &:hover
+            top: -2px
+            left: 2px
+            box-shadow: -3px 4px 4px $prim-color
+    &:hover
+        cursor: pointer
+        border: 1px solid $prim-color
+        .MuiSvgIcon-colorPrimary
+            color: $prim-color !important
+
+.swiperBtns__buttonIcon
+    width: 30px
+    height: 30px
+    color: $def-color
+
+.slider__thumbnail_block
+    display: flex
+    position: absolute
+    bottom: 0px
+    width: 100%
+    height: 200px
+    padding: 32px
+    z-index: 9999
+
+.slider__thumbnail_background
+    position: absolute
+    top: 0
+    left: 0
+    height: inherit
+    width: 100%
+    background: $prim-back-80-color
+    opacity: 1
+
+.slider__thumbnail_item
+    +transitionDuration(0.1s)
+    position: relative
+    top: 0
+    left: 0
+    width: 209px
+    height: 100%
+    padding: 0
+    border: 0
+    overflow: hidden
+    margin-right: 24px
+    z-index: 10
+    border-radius: 4px
+    outline: none
+    opacity: 0.4
+    img
+        width: inherit
+        margin: auto -90px
+        border-radius: 4px
+    &:hover
+        cursor: pointer
+        top: -4px
+        left: 4px
+        border: 1px solid $prim-color
+        box-shadow: -3px 4px 4px $prim-color
+        opacity: 1 !important
+
+.slider__thumbnail_activeItem
+    border: 1px solid $prim-color
+    opacity: 1 !important
+
+/** -----------------------------------
+
+    MOdel PAge Slider Styles
+
+//------------------------------------ **/
+
+.modelPage__slider
+    .sliderMain__infoBlock
+        height: 100%

@@ -1,0 +1,68 @@
+$txt-120px: 7.500em
+$txt-48px: 3.000em
+$txt-36px: 2.250em
+$txt-32px: 2.000em
+$txt-24px: 1.500em
+$txt-18px: 1.125em
+$txt-16px: 1em
+$txt-14px: 0.875em
+$txt-12px: 0.750em
+
+$prim-color: #181818
+$snd-color: #040D21
+$spec_color: #F99200
+
+$def-color: #ffffff
+$def-15-color: rgba(255, 255, 255, 0.15)
+$def-40-color: rgba(255, 255, 255, 0.4)
+$def-80-color: rgba(255, 255, 255, 0.8)
+
+=transitionDuration($property)
+    -webkit-transition-duration: $property
+    -moz-transition-duration: $property
+    -o-transition-duration: $property
+    transition-duration: $property
+
+.visuallyHidden
+    display: none
+
+.btn_visible
+    height: 32px
+    line-height: 32px !important
+    color: $def-color !important
+    background-color: $spec_color !important
+
+.container_page
+    position: relative
+    top: 64px
+    height: calc(100vh - 64px)
+    margin-bottom: 64px
+    background: $snd-color
+
+.content_page
+    position: relative
+    width: 1100px
+    margin: auto
+
+.main_container
+    position: relative
+    width: 100%
+    height: 100vh
+    padding: 32px
+    background: $def-color
+
+.bread_crumbs_page
+    padding: 48px 0 0 32px
+    color: $def-color
+    line-height: 64px
+    font-size: $txt-24px
+    font-weight: 400
+
+.select_container
+    margin: 0 32px 32px 0  
+
+.select
+    width: 180px
+
+    
+    

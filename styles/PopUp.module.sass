@@ -1,0 +1,30 @@
+@import './app'
+
+
+.container
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 9999
+
+.background
+    position: absolute
+    width: inherit
+    height: inherit
+    background: #000000
+    opacity: 0.4
+    z-index: 9999
+
+.content
+    position: relative
+    top: 50%
+    left: 50%
+    width: 400px
+    padding: 32px
+    background: $def-color
+    border-radius: 6px
+    border: 1px solid $prim-color
+    transform: translate(-50%, -50%)
+    z-index: 9999
