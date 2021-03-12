@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 import s from '../../styles/ProductList/ProductslIst.module.sass'
 import NavBar from './Navbar'
