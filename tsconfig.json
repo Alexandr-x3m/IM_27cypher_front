@@ -19,5 +19,5 @@
     "target": "esnext",
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "nextjs.config.js", "components/Slider/Slider.js"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
