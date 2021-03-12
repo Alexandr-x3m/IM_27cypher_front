@@ -118,6 +118,7 @@ const ProductList: React.FC = () => {
         </h1>
         <div className={s.navbar_container} >
           <NavBar
+            store={{user_active: false, id: '1', login: '2', email: '3', role: '4'}}
             categories={categories}
             search={search}
             setSearch={setSearch}

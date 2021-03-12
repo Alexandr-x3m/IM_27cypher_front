@@ -24,7 +24,7 @@ export function deleteCookie() {
     }
 }
 
-export function deleteOneCookie(name) {
+export function deleteOneCookie(name: string) {
     const date = new Date(); // Берём текущую дату
     date.setTime(date.getTime() - 1); // Возвращаемся в "прошлое"
     const cookies = document.cookie.split('; ');

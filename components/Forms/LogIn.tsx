@@ -1,19 +1,18 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 
 import { setCookie } from '../../utils/token'
-
-
 import { TextField, Button } from '@material-ui/core'
-
 import s from '../../styles/Forms/Form.module.sass'
+
 import { setUserSettings } from '../../redux/actionCreators/UserSettingActions'
+import { StoreType, UserSettingsType } from '../../interfaces/ReduxStates'
 
 
 interface LogInProps {
-    setUserSettings: Function,
-    closeWindow: Function
+    closeWindow: Function,
+    setUserSettings: UserSettingsType['setUserSettings']
 }
 
 const LogIn: React.FC<LogInProps> = (props) => {
@@ -21,7 +20,7 @@ const LogIn: React.FC<LogInProps> = (props) => {
     const [login, setLogin] = useState<string>('')
     const [pass, setPass] = useState<string>('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         console.log('Отправлено')
 
@@ -75,7 +74,7 @@ const LogIn: React.FC<LogInProps> = (props) => {
             <div className={s.txtfields_container} >
                 <TextField
                     value={login}
-                    onChange={e => setLogin(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLogin(e.target.value)}
                     id="user_name"
                     label='Имя пользователя'
                     classes={{root: s.textfield_label}}
@@ -83,7 +82,7 @@ const LogIn: React.FC<LogInProps> = (props) => {
                 />
                 <TextField
                     value={pass}
-                    onChange={e => setPass(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPass(e.target.value)}
                     id="user_pass"
                     label='Пароль'
                     classes={{root: s.textfield_label}}
@@ -102,10 +101,12 @@ const LogIn: React.FC<LogInProps> = (props) => {
     )
 }
 
-const MapStateToProps = (state) => ({
+const MapStateToProps = (state: StoreType) => ({
     store: state.userSettingsReducer
 }); 
 
-const MapDispatchToProps = { setUserSettings }
+const MapDispatchToProps = { 
+    setUserSettings
+}
 
 export default connect(MapStateToProps, MapDispatchToProps)(LogIn)

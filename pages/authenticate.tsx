@@ -5,9 +5,11 @@ import { connect } from 'react-redux'
 import { getCookie, deleteOneCookie } from '../utils/token'
 import { clearActiveUser, setUserSettings } from '../redux/actionCreators/UserSettingActions'
 import Loader from '../components/Loader/Loader'
+import { StoreType, UserSettingsType } from '../interfaces/ReduxStates'
 
 
-const Authenticate: React.FC<{ clearActiveUser: Function, setUserSettings: Function }> = (props) => {
+const Authenticate: React.FC<{ clearActiveUser: UserSettingsType['clearActiveUser'], setUserSettings: UserSettingsType['setUserSettings'] }> = (props) => {
+
     const [loader, setLoader] = useState<boolean>(true)
 
     useEffect(() => {
@@ -77,13 +79,13 @@ const Authenticate: React.FC<{ clearActiveUser: Function, setUserSettings: Funct
     )
 }
 
-const MapStateToProps = state => ({
+/* const MapStateToProps = (state: StoreType) => ({
     store: state.userSettingsReducer
-})
+}) */
 
 const MapDispatchToProps = {
     clearActiveUser,
     setUserSettings
 }
 
-export default connect(MapStateToProps, MapDispatchToProps)(Authenticate)
+export default connect(null, MapDispatchToProps)(Authenticate)

@@ -10,11 +10,12 @@ import LogIn from '../Forms/LogIn'
 import Registr from '../Forms/Registr'
 import { clearActiveUser } from '../../redux/actionCreators/UserSettingActions'
 import { deleteOneCookie } from '../../utils/token'
+import { StoreType } from '../../interfaces/ReduxStates'
 
 
 interface HeaderProps {
+    store: StoreType['userSettingsReducer'],
     clearActiveUser: Function,
-    store: any
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
@@ -74,7 +75,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     )
 }
 
-const MapStateToProps = state => ({
+const MapStateToProps = (state: StoreType) => ({
     store: state.userSettingsReducer
 })
 

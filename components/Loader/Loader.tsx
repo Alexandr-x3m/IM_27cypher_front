@@ -1,6 +1,6 @@
 import s from '../../styles/loader.module.sass'
 
-const Loader: React.FC = (props) => {
+const Loader: React.FC = () => {
 
     return (
         <div className={s.container} >

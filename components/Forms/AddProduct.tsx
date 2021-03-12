@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 import s from '../../styles/Forms/Form.module.sass'
 import { Select, MenuItem, TextField, Button, Input, InputLabel } from '@material-ui/core'
 
 
-const AddProduct: React.FC = (props) => {
+const AddProduct: React.FC = () => {
 
     const [name, setName] = useState<string>('')
     const [desc, setDesc] = useState<string>('')
@@ -84,6 +84,10 @@ const AddProduct: React.FC = (props) => {
             .catch(err => console.log(err))
     }
 
+    const categorySelectHandler = (e: React.ChangeEvent<{value: unknown}>) => {
+        setCategoryID(e.target.value as string)
+    }
+
     return (
         <form
             //className={s.main_container}
@@ -133,7 +137,7 @@ const AddProduct: React.FC = (props) => {
                             id='category_select'
                             labelId='category_select'
                             value={categoryID}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCategoryID(e.target.value)}
+                            onChange={(e: React.ChangeEvent<{value: unknown}>) => categorySelectHandler(e)}
                             className={s.select}
                             required={true}
                         >
@@ -150,7 +154,7 @@ const AddProduct: React.FC = (props) => {
                             id='manufacture_select'
                             labelId='manufacture_select'
                             value={manufactureID}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setManufactureID(e.target.value)}
+                            onChange={(e: React.ChangeEvent<{value: unknown}>) => setManufactureID(e.target.value as string)}
                             className={s.select}
                             required={true}
                         >

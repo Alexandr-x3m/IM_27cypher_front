@@ -1,6 +1,7 @@
 import * as types from '../actions'
+import { UserSettingsType } from '../../interfaces/ReduxStates'
 
-export const setUserSettings = (data: {id: string, login: string, email: string, role: string}) => ({
+export const setUserSettings: UserSettingsType['setUserSettings'] = (data) => ({
     type: types.SET_ACTIVE_USER,
     payload: {
         id: data.id,

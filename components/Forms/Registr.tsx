@@ -6,10 +6,12 @@ import { connect } from 'react-redux'
 import s from '../../styles/Forms/Form.module.sass'
 import { setCookie } from '../../utils/token'
 import { setUserSettings } from '../../redux/actionCreators/UserSettingActions'
+import { StoreType, UserSettingsType } from '../../interfaces/ReduxStates'
+
 
 interface RegisterForm {
     closeWindow: Function,
-    setUserSettings: Function
+    setUserSettings: UserSettingsType['setUserSettings']
 }
 
 const emailValid = '/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
@@ -170,7 +172,7 @@ const Register: React.FC<RegisterForm> = (props) => {
     )
 }
 
-const MapStateToProps = state => ({
+const MapStateToProps = (state: StoreType) => ({
     store: state.userSettingsReducer
 })
 

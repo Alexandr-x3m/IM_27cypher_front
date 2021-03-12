@@ -1,6 +1,8 @@
 import { SET_ACTIVE_USER, CLEAR_ACTIVE_USER } from '../actions';
+import { UserSettingsType } from '../../interfaces/ReduxStates'
 
-const initialState = {
+
+const initialState: UserSettingsType['initState'] = {
     user_active: false,
     id: '',
     login: '',
@@ -8,7 +10,7 @@ const initialState = {
     role: '',
 }   
 
-const userSettingsReducer = (state = initialState, action: {type: string, payload: {id: string, login: string, email: string, role: string, user_active: boolean}}) => {
+const userSettingsReducer = (state = initialState, action: any): UserSettingsType['initState'] => {
     switch(action.type){
         case SET_ACTIVE_USER: 
             return {
