@@ -1,4 +1,3 @@
-import Image from "next/Image"
 
 import s from '../../styles/ProductList/productItem.module.sass'
 
